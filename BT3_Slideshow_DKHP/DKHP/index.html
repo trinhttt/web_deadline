@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <title>1512601_DKHP</title>
+</head>
+
+<body onLoad="init()">
+<h3 style="text-align: center;margin-top: 15px;margin-bottom:5px;font-family: Arial;">DANH SÁCH MÔN HỌC ĐƯỢC ĐĂNG
+    KÝ:</h3>
+<table id="table1" class="opt2">
+    <tr>
+        <th>STT</th>
+        <th>Mã HP</th>
+        <th> Tên học phần</th>
+        <th> Sỉ số</th>
+        <th>Đã ĐK</th>
+        <th>Chọn</th>
+    </tr>
+</table>
+<input style="margin-left: 800px;width: 7%;height: 5%" type="button" id="btn" value="Đăng ký">
+<h3 style="text-align: center;margin-top: 25px;margin-bottom:5px;font-family: Arial">DANH SÁCH MÔN HỌC ĐÃ ĐĂNG KÝ:</h3>
+<table id="table2" border="1" class="opt2">
+    <tr>
+        <th>STT</th>
+        <th>Mã HP</th>
+        <th> Tên học phần</th>
+        <th> Sỉ số</th>
+        <th>Đã ĐK</th>
+    </tr>
+</table>
+<script type="text/javascript">
+    var maph = ["CT505", "CT202", "CT205", "CT303", "CT502", "CT105", "CT206", "CT402", "CT501"];
+    var tenhp = ["Kiến tập NN", "CSDL", "Phát triển ứng dụng Web", "Lập trình di động", "Lập trình Java", "Lập trình Game", "PT&TK phần mềm", "Hệ điều hành", "Mạng máy tính"];
+    var siso = [90, 100, 120, 120, 90, 70, 110, 80, 90];
+    var dadk = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var check=0;
+
+    //bien static luu sl phan tu bang table1
+    function foo() {
+        if (typeof foo.counter === 'undefined') {
+            foo.counter = 9;
+        }
+        foo.counter -= check;
+        return foo.counter;
+    }
+
+    //bien static luu stt bang table2
+    function foo1() {
+        if (typeof foo1.counter === 'undefined') {
+            foo1.counter = 0;
+        }
+        foo1.counter++;
+        return foo1.counter;
+    }
+
+    //khoi tao ban dau bang table1
+    function init() {
+        for (var i = 0; i < 9; i++) {
+            var html = '<tr> <td>' + (i + 1) + '</td> <td>' + maph[i] + '</td> <td>' + tenhp[i] + '</td> <td>' + siso[i] + '</td> <td>' + dadk[i] + '</td> <td> <input type="checkbox" name="chbox" value="' + i + '"> </td> </tr>';
+            var divD = document.getElementById('table1');
+            if (divD) {
+                divD.innerHTML += html;
+            }
+        }
+    }
+
+    document.getElementById('btn').onclick = function () {
+        var checkbox = document.getElementsByName('chbox');
+        len = foo();
+//        alert(len+"_"+check);
+        check = 0;
+        var stt = [];
+
+        //insert dong da check
+        for (var i = 0; i < len; i++) {
+            if (checkbox[i].checked === true) {
+
+                stt[check] = i;
+                check = check + 1;
+                var x = document.getElementById('table2').insertRow();
+                var col1 = x.insertCell(0);
+                var col2 = x.insertCell(1);
+                var col3 = x.insertCell(2);
+                var col4 = x.insertCell(3);
+                var col5 = x.insertCell(4);
+                col1.innerHTML = foo1();
+                col2.innerHTML = maph[i];
+                col3.innerHTML = tenhp[i];
+                col4.innerHTML = siso[i];
+                col5.innerHTML = dadk[i]+1;
+            }
+        }
+
+        //xoa mang de khoi tao lai
+        var tam = len;
+        for (var j = 0; j < tam; j++) {
+            document.getElementById('table1').deleteRow(1);
+        }
+
+        //xoa phan tu trong mang, cai ma danh dau check
+        for (var k = 0; k < check; k++) {
+            tenhp.splice(stt[k] - k, 1);
+            console.log(tenhp);
+            maph.splice(stt[k] - k, 1);
+            console.log(maph);
+            siso.splice(stt[k] - k, 1);
+            console.log(siso);
+            dadk.splice(stt[k] - k, 1);
+            console.log(dadk);
+        }
+
+        //init() voi len da giam
+        for (var l = 0; l < len - check; l++) {
+            var html = '<tr> <td>' + (l + 1) + '</td> <td>' + maph[l] + '</td> <td>' + tenhp[l] + '</td> <td>' + siso[l] + '</td> <td>' + dadk[l] + '</td> <td> <input type="checkbox" name="chbox" value="' + l + '"> </td> </tr>';
+            var divD = document.getElementById('table1');
+            if (divD) {
+                divD.innerHTML += html;
+            }
+        }
+
+        if (check === 0) {
+            alert("Vui lòng chọn môn cần đăng ký!");
+            check=0;
+        } else {
+            alert("Đăng ký thành công!");
+        }
+    };
+
+</script>
+</body>
+</html>
+
+
+
+

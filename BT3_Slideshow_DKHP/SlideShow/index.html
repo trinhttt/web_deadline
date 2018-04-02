@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SlideShow</title>
+</head>
+
+<body>
+
+<div class="slider" id="slides">
+    <input type="radio" name="slide_switch" id="id1" checked/>
+    <label for="id1">
+        <img src="imgs/1.png" alt="" width="85px">
+    </label>
+    <img src="imgs/1.png" alt="image" width="640px" class="slide showing">
+
+    <input type="radio" name="slide_switch" id="id2"/>
+    <label for="id2">
+        <img src="imgs/2.png" alt="" width="85px">
+    </label>
+    <img src="imgs/2.png" alt="image" width="640px" class="slide">
+
+    <input type="radio" name="slide_switch" id="id3"/>
+    <label for="id3">
+        <img src="imgs/3.png" alt="" width="85px">
+    </label>
+    <img src="imgs/3.png" alt="image" width="640px" class="slide">
+
+    <input type="radio" name="slide_switch" id="id4"/>
+    <label for="id4">
+        <img src="imgs/4.png" alt="" width="85px">
+    </label>
+    <img src="imgs/4.png" alt="image" width="640px" class="slide">
+
+    <input type="radio" name="slide_switch" id="id5"/>
+    <label for="id5">
+        <img src="imgs/5.png" alt="" width="85px">
+    </label>
+    <img src="imgs/5.png" alt="image" width="640px" class="slide">
+
+    <input type="radio" name="slide_switch" id="id6"/>
+    <label for="id6">
+        <img src="imgs/6.png" alt="" width="85px">
+    </label>
+    <img src="imgs/6.png" alt="image" width="640px" class="slide">
+</div>
+
+
+<button class="controls"><img src="imgs/play1.png" id="pause"/>
+</button>
+
+<script type="text/javascript">
+    var slides = document.querySelectorAll('#slides .slide');
+    var currentSlide = 0;
+    var slideInterval;
+    document.getElementById("slides").className = "new";
+
+    function nextSlide() {
+        slides[currentSlide].className = 'slide';
+        currentSlide = (currentSlide+1)%slides.length;
+        slides[currentSlide].className = 'slide showing';
+    }
+
+    var playing = false;
+    var pauseButton = document.getElementById('pause');
+
+    function pauseSlideshow() {
+        pauseButton.src = "imgs/play1.png";
+        playing = false;
+        clearInterval(slideInterval);
+        document.getElementById("slides").className = "new";
+    }
+
+    function playSlideshow() {
+        pauseButton.src = "imgs/pause.png";
+        playing = true;
+        document.getElementById("slides").className = "slider";
+        slideInterval = setInterval(nextSlide, 2000);
+    }
+
+    pauseButton.onclick = function () {
+        if (playing) {
+            pauseSlideshow();
+        }
+        else {
+            playSlideshow();
+        }
+    };
+</script>
+</body>
+</html>

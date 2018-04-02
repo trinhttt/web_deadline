@@ -1,0 +1,30 @@
+table {
+    font-family: Arial,Times;
+    margin: 5px auto;
+
+    border-collapse: collapse;
+    border: 1px solid gray;
+    font-size: 14px;
+}
+
+.opt2 td,th {
+    border: 1px solid gray;
+    text-align: center;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+td.opt1 {
+    text-align: left;
+}
+
+th {
+    background-color: #77cbff;
+    border-width: 1px;
+}
+
+table.opt2 {
+    background-color: #f4feff
+}

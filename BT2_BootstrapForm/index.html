@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFO FORM</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="js/bootstrap.js">
+
+</head>
+
+
+<nav class="navbar navbar-inverse" style="border-radius: 0px">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> <a href="#" class="navbar-brand">PERSON INFO FORM</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Sample</a></li>
+                <li><a href="#">Others</a>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<body>
+    <div class="container">
+        <section id="info"></section>
+        <div class="row" >
+            <ul class="nav nav-tabs col-sm-3 nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
+                <li class="active"><a href="#" class="link">Form Sample</a></li>
+                <li><a href="#info"style="color: black">Person Info</a></li>
+                <li><a href="#address" style="color: black">Address </a></li>
+            </ul>
+            <form class="form-horizontal" action="/action_page.php">
+            <div class="col-sm-9 ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Form Sample</h3></div>
+
+
+                        <div class="panel-body">
+                            <span style="font-size:28px">Person Info</span>
+                            <hr>
+                            <div class="row form-group">
+                                <div class="col-sm-2"><span class="text">First Name</span></div>
+                                <div class="col-sm-4">
+                                    <input type="text"class="form-control" placeholder="---">
+                                </div>
+
+                                <div class="col-sm-2"><span class="text">Last Name</span></div>
+                                <div class="col-sm-4">
+                                    <input type="text"class="form-control"placeholder="---">
+                                </div>
+
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-2"><span class="text">Gender </span></div>
+                                <div class="col-md-4">
+                                    <select class="form-control" id="sel1">
+                                            <option value="12" selected="">Male</option>
+                                            <option value="13">Female</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2"><span class="text">Date of Birth</span></div>
+                                <div class="col-md-4">
+                                    <input type="date"class="form-control"placeholder="mm/dd/yyy">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-2"><span class="text">Category </span></div>
+                                <div class="col-md-4">
+                                    <select class="form-control" >
+                                        <option value="12" selected="">Category 2</option>
+                                        <option value="13">Category 1</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-md-2"><span class="text">Membership </span></div>
+                                <div class="col-md-4">
+                                    <label class="radio-inline"><input type="radio" name="optradio">Free</label>
+                                    <label class="radio-inline"><input checked type="radio" name="optradio">Profressional</label>
+
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <br>
+                                    <section id="address"></section><span style="font-size:28px">Address </span></div>
+                            </div>
+                            <hr>
+                            <div class="row form-group">
+                                <div class="col-md-2"><span class="text">Address 1</span></div>
+                                <div class="col-md-4">
+                                    <input type="text"class="form-control"placeholder="---">
+                                </div>
+                                <div class="col-md-2"><span class="text">Address 2</span></div>
+                                <div class="col-md-4">
+                                    <input type="text"class="form-control"placeholder="---">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-2"><span class="text">City </span></div>
+                                <div class="col-md-4">
+                                    <input type="text"class="form-control"placeholder="---">
+                                </div>
+                                <div class="col-md-2"><span class="text">State </span></div>
+                                <div class="col-md-4">
+                                    <input type="text"class="form-control"placeholder="---">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-2"><span class="text">Post Code</span></div>
+                                <div class="col-md-4">
+                                    <input type="text"class="form-control"placeholder="---">
+                                </div>
+                                <div class="col-md-2"><span class="text">Country </span></div>
+                                <div class="col-md-4">
+                                    <select class="form-control" id="sel3">
+
+                                            <option value="12" selected="">Country 1</option>
+                                            <option value="13">Country 2</option>
+                                            <option value="14">Country 3</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="panel-footer">
+                                <div class="row form-group" style="margin-left: -200px;margin-top: 10px">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-success">Success</button>
+                                            <button type="button" class="btn">Basic</button>
+
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+
+            </div>
+            </form>
+            <footer>
+                <div style="color: green;margin-left: 999px"class="pull-left"><span>2018 © Trinh Thai</span></div>
+            </footer>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

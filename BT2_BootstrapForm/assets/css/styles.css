@@ -1,0 +1,37 @@
+div.container-fluid{
+  background-color:#2196F3;
+  color:#fff;
+  height:200px;
+}
+
+div.row{
+  margin-top:20px;
+}
+
+span.text{
+  float:right;
+}
+
+button.btn.btn-default.bt1{
+  background:#35aa47;
+}
+
+.panel-default > .panel-heading{
+  color:#333;
+  background-color:#35aa47;
+  border-color:#35aa47;
+}
+
+.panel-default > .panel-heading{
+  background-image:-webkit-linear-gradient(top,#f5f5f5 0,#e8e8e8 100%);
+  background-image:-o-linear-gradient(top,#f5f5f5 0,#e8e8e8 100%);
+  background-image:-webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#e8e8e8));
+  background-image:linear-gradient(to bottom,#35aa47 0,#35aa47 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
+  background-repeat:repeat-x;
+}
+
+a.link{
+  background:red;
+}
+

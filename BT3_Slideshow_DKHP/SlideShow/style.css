@@ -1,0 +1,111 @@
+*
+{
+    margin:0;
+    padding:0;
+}
+body{
+    background: #fff;
+}
+.slider{
+    width:640px;
+    position:relative;
+    padding-top:320px;
+    margin:30px auto;
+    box-shadow: 0 110px 20px -5px;
+    transition: opacity 1s;
+}
+.new{
+    width:640px;
+    position:relative;
+    padding-top:320px;
+    margin:30px auto;
+    box-shadow: 0 110px 20px -5px;
+    transition: opacity 1s;
+}
+.showing{
+    opacity: 1;
+    z-index: 2;
+}
+.slider > img {
+    position:absolute;
+    top:0;
+    left:0;
+    transition:all .3s;
+}
+.new > img {
+    position:absolute;
+    top:0;
+    left:0;
+    transition:all .3s;
+}
+input[name='slide_switch']{
+    display:none;
+}
+
+.slider label{
+    margin: 170px 0 0 13px;
+    border: 3px solid #999;
+    float:left;
+    cursor:pointer;
+    opacity:.6;
+    transition:all .8s;
+}
+.new label{
+    margin: 170px 0 0 13px;
+    border: 3px solid #999;
+    float:left;
+    cursor:pointer;
+    opacity:.6;
+    transition:all .8s;
+}
+.slider label img{
+    display:block;
+}
+.new label img{
+    display:block;
+}
+.slider input[name='slide_switch']:checked + label{
+    opacity:1;
+    border-color: palevioletred;
+}
+.new input[name='slide_switch']:checked + label{
+    opacity:1;
+    border-color: palevioletred;
+}
+
+.slider input[name='slide_switch'] ~ img{
+    opacity:1;
+
+}
+.new input[name='slide_switch'] ~ img{
+    opacity:0;
+    transform: scale(1.05,1.05);
+}
+
+
+.slider input[name='slide_switch']:checked + label + img{
+    opacity:1;
+
+
+}
+.new input[name='slide_switch']:checked + label + img{
+    opacity:1;
+    transform: scale(1,1);
+}
+#pause{
+    width: 50px;
+    height: 50px;
+    border: 1px #d4d4d4 solid;
+    border-radius: 50%;
+    cursor:pointer;
+
+}
+.controls{
+    margin-top:  80px;
+    margin-left: -330px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border:0px;
+}
+
